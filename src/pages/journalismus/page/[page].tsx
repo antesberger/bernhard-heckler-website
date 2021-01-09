@@ -5,7 +5,11 @@ import OpenGraphMeta from '../../../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../../../components/meta/TwitterCardMeta'
 import PostList from '../../../components/PostList'
 import config from '../../../lib/config'
-import { countPosts, listPostContent, PostContent } from '../../../lib/posts'
+import {
+  countPosts,
+  listPostContent,
+  PostContent,
+} from '../../../lib/journalismus'
 
 type Props = {
   posts: PostContent[]
