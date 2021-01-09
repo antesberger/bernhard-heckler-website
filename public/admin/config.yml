@@ -74,7 +74,7 @@ collections:
         name: "body"
         widget: "markdown"
 
-- name: "tagebuch"
+  - name: "tagebuch"
     label: "Tagebuch"
     folder: "src/pages/tagebuch"
     extension: "mdx"
