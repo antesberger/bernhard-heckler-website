@@ -44,7 +44,7 @@ collections:
 
   - name: "jornalismus"
     label: "Jornalismus"
-    folder: "src/pages/jornalist"
+    folder: "src/pages/jornalismus"
     extension: "mdx"
     format: "frontmatter"
     create: true
@@ -99,3 +99,4 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+        

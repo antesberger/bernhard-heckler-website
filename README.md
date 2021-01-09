@@ -20,9 +20,6 @@ Or access the following demo site:
 [Next.js blog template for Netlify](https://nextjs-netlify-blog-template.netlify.app/)
 
 ## Features
-
-- **Tagging**: organizes content by tags
-- **Author**: displays author names who write a post
 - **Pagination**: limits the number of posts per page
 - **CMS**: built with CMS to allow editors modifying content with the quickest way
 - **SEO optimized**: built-in metadata like JSON-LD
@@ -79,8 +76,6 @@ The category metadata that associates with content have the same relationship wi
 Then reference these implementations for adding new metadata:
 
 - [public/admin/config.yml](https://github.com/wutali/nextjs-netlify-blog-template/blob/master/public/admin/config.yml#L51): author metadata definition for Netlify CMS
-- [src/lib/authors.tsx](https://github.com/wutali/nextjs-netlify-blog-template/blob/master/src/lib/authors.ts): fetches metadata and defines utility functions for components
-- [meta/authors.yml](https://github.com/wutali/nextjs-netlify-blog-template/blob/master/src/meta/authors.yml): author content managed by Netlify CMS
 - [layouts/index.tsx](https://github.com/wutali/nextjs-netlify-blog-template/blob/master/src/layouts/index.tsx): displays author content for each page
 
 You understood they have four steps to add the category metadata on your project after you read the above source codes:

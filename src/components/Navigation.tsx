@@ -17,19 +17,19 @@ export default function Navigation() {
         </Link>
         <ul className='flex space-x-s'>
           <li>
-            <Link href='/posts'>
+            <Link href='/tagebuch'>
               <a
                 className={
-                  router.pathname.startsWith('/posts') ? 'active' : null
+                  router.pathname.startsWith('/tagebuch') ? 'active' : null
                 }
               >
-                Aktuelles
+                Tagebuch
               </a>
             </Link>
           </li>
           <li>
-            <Link href='/posts'>
-              <a>Reportagen</a>
+            <Link href='/journalismus'>
+              <a>Essays/Reportagen</a>
             </Link>
           </li>
         </ul>
