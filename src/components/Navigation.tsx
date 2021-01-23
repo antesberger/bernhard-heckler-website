@@ -9,7 +9,7 @@ export default function Navigation() {
   return (
     <nav className='flex justify-center w-full p-s absolute text-white'>
       <Burger active={active} onClick={() => setActive(!active)} />
-      <div className='flex justify-between items-center w-full max-x-xl'>
+      <div className='flex justify-between items-center w-full max-w-xl'>
         <Link href='/'>
           <a>
             <h1 className='font-bold text-xl'>Bernhard Heckler</h1>

@@ -20,8 +20,8 @@ type Props = {
   }
 }
 export default function Page({ posts, pagination, page }: Props) {
-  const url = `/tagebuch/${page}`
-  const title = 'Alle Tagebuch Einträge'
+  const url = `/journalismus/${page}`
+  const title = 'Eine Reportage/Essay'
   return (
     <Layout>
       <BasicMeta url={url} title={title} />

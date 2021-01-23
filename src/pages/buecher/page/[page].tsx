@@ -5,7 +5,7 @@ import OpenGraphMeta from '../../../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../../../components/meta/TwitterCardMeta'
 import PostList from '../../../components/PostList'
 import config from '../../../lib/config'
-import { countPosts, listPostContent, PostContent } from '../../../lib/tagebuch'
+import { countPosts, listPostContent, PostContent } from '../../../lib/books'
 
 type Props = {
   posts: PostContent[]
@@ -16,8 +16,9 @@ type Props = {
   }
 }
 export default function Page({ posts, pagination, page }: Props) {
-  const url = `/tagebuch/${page}`
-  const title = 'Tagbucheintrag'
+  const url = `/buecher/${page}`
+  const title = 'Alle Bücher'
+
   return (
     <Layout>
       <BasicMeta url={url} title={title} />

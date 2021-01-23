@@ -41,8 +41,9 @@ collections:
           - label: "Instagram account"
             name: "instagram_account"
             widget: "string"
+
       - name: "home"
-        label: Home Page"
+        label: "Home Page"
         file: "general_config/home.json"
         description: "Home Page Settings"
         fields:
@@ -53,9 +54,41 @@ collections:
             name: "intro_text"
             widget: "markdown"
 
+  - name: "books"
+    label: "Bücher"
+    folder: "src/pages/buecher"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}}"
+    fields:
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        dateFormat: "YYYY-MM-DD"
+        timeFormat: false
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+      - name: "image"
+        label: "image"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
+        
   - name: "jornalismus"
-    label: "Jornalismus"
-    folder: "src/pages/jornalismus"
+    label: "Journalismus"
+    folder: "src/pages/journalismus"
     extension: "mdx"
     format: "frontmatter"
     create: true
