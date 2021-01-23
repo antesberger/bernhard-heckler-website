@@ -1,4 +1,4 @@
-import config from '../../config.json'
+import config from '../../general_config/config.json'
 
 type Config = {
   readonly base_url: string
