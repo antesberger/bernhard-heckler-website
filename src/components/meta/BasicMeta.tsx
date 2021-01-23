@@ -16,6 +16,10 @@ export default function BasicMeta({ title, description, url }: Props) {
         name='description'
         content={description ? description : config.site_description}
       />
+      <meta
+        name='keywords'
+        content={config.site_keywords.map((object) => object.keyword).join(',')}
+      />
       <link rel='canonical' href={config.base_url + url} />
     </Head>
   )

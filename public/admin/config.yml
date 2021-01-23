@@ -38,8 +38,8 @@ collections:
           - label: "Twitter account"
             name: "twitter_account"
             widget: "string"
-          - label: "GitHub account"
-            name: "github_account"
+          - label: "Instagram account"
+            name: "instagram_account"
             widget: "string"
 
   - name: "jornalismus"

@@ -2,7 +2,6 @@ import React from 'react'
 import Date from '../components/Date'
 import Layout from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
-import JsonLdMeta from '../components/meta/JsonLdMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
 import { SocialList } from '../components/SocialList'
@@ -36,12 +35,6 @@ export default function Index({
         <OpenGraphMeta
           url={`/posts/${slug}`}
           title={title}
-          description={description}
-        />
-        <JsonLdMeta
-          url={`/posts/${slug}`}
-          title={title}
-          date={date}
           description={description}
         />
         <div>
