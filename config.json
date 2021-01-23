@@ -13,6 +13,7 @@
       "keyword": "Journalist"
     }
   ],
+  "posts_per_page": 20,
   "twitter_account": "https://twitter.com/bernhardheckler",
   "instagram_account": "https://www.instagram.com/bernihecklestone/"
 }
