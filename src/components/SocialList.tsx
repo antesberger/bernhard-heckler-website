@@ -5,14 +5,14 @@ import config from '../lib/config'
 
 export function SocialList({}) {
   return (
-    <div>
+    <div className='flex space-x-s'>
       <a
         title='Twitter'
         href={config.twitter_account}
         target='_blank'
         rel='noopener'
       >
-        <Twitter width={24} height={24} fill={'#222'} />
+        <Twitter width={24} height={24} fill={'white'} />
       </a>
       <a
         title='Instagram'
@@ -20,7 +20,7 @@ export function SocialList({}) {
         target='_blank'
         rel='noopener'
       >
-        <Instagram width={24} height={24} fill={'#222'} />
+        <Instagram width={24} height={24} fill={'white'} />
       </a>
     </div>
   )

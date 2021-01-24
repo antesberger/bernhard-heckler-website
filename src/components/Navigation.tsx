@@ -6,8 +6,20 @@ import { useState } from 'react'
 export default function Navigation() {
   const router = useRouter()
   const [active, setActive] = useState(false)
+
+  const links = [
+    {
+      text: 'Tagebuch',
+      href: '/tagebuch',
+    },
+    {
+      text: 'Essays/Reportagen',
+      href: '/journalismus',
+    },
+  ]
+
   return (
-    <nav className='flex justify-center w-full p-s absolute text-white'>
+    <nav className='absolute z-10 flex justify-center w-full p-s absolute text-white'>
       <Burger active={active} onClick={() => setActive(!active)} />
       <div className='flex justify-between items-center w-full max-w-xl'>
         <Link href='/'>
@@ -16,22 +28,19 @@ export default function Navigation() {
           </a>
         </Link>
         <ul className='flex space-x-s'>
-          <li>
-            <Link href='/tagebuch'>
-              <a
-                className={
-                  router.pathname.startsWith('/tagebuch') ? 'active' : null
-                }
-              >
-                Tagebuch
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/journalismus'>
-              <a>Essays/Reportagen</a>
-            </Link>
-          </li>
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link href={link.href}>
+                <a
+                  className={`font-semibold text-md base ${
+                    router.pathname.startsWith(link.href) ? 'nav-active' : null
+                  }`}
+                >
+                  {link.text}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

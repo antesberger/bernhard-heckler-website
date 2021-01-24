@@ -2,28 +2,33 @@ import Layout from '../components/Layout'
 import BasicMeta from '../components/meta/BasicMeta'
 import OpenGraphMeta from '../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../components/meta/TwitterCardMeta'
-import { SocialList } from '../components/SocialList'
 import { getMostRecentPost } from '../lib/tagebuch'
 import { GetStaticProps } from 'next'
+import { TagebuchPostContent } from '../lib/utils'
+import Hero from '../components/Hero'
 
-export default function Index({ tagebuchPost }) {
+type IndexProps = {
+  tagebuchPost: TagebuchPostContent
+}
+
+const Index: React.FC<IndexProps> = ({ tagebuchPost }: IndexProps) => {
   return (
     <Layout>
       <BasicMeta url={'/'} />
       <OpenGraphMeta url={'/'} />
       <TwitterCardMeta url={'/'} />
 
-      <img className='w-full' src='images/bernhard_heckler_01.jpg'></img>
-      <SocialList />
+      <Hero image='images/bernhard_heckler_01.jpg' />
 
       <div className='container'>
-        {tagebuchPost.title}
-        {tagebuchPost.body}
+        {tagebuchPost.data.title}
+        {tagebuchPost.content}
       </div>
     </Layout>
   )
 }
 
+export default Index
 export const getStaticProps: GetStaticProps = async () => {
   const tagebuchPost = getMostRecentPost()
 
