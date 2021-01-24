@@ -70,6 +70,7 @@ module.exports = {
       inherit: 'inherit',
       'fit-content': 'fit-content',
       auto: 'auto',
+      nav: '100px',
     },
     screens: {
       xs: '320px',
@@ -142,6 +143,9 @@ module.exports = {
         md: '768px',
         lg: '1160px',
         xl: '1440px',
+      },
+      height: {
+        nav: '100px',
       },
       minHeight: {
         auto: 'auto',

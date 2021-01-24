@@ -19,9 +19,9 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className='absolute z-10 flex justify-center w-full py-md absolute text-white'>
+    <nav className='sticky h-nav top-0 z-10 flex justify-center w-full px-sm absolute text-white'>
       <Burger active={active} onClick={() => setActive(!active)} />
-      <div className='flex justify-between items-center w-full max-w-xl'>
+      <div className='flex justify-between items-center w-full'>
         <Link href='/'>
           <a>
             <h1 className='font-bold text-xl'>Bernhard Heckler</h1>
