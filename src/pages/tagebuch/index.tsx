@@ -5,10 +5,11 @@ import OpenGraphMeta from '../../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../../components/meta/TwitterCardMeta'
 import PostList from '../../components/PostList'
 import config from '../../lib/config'
-import { PostContent, listPostContent, countPosts } from '../../lib/tagebuch'
+import { listPostContent, countPosts } from '../../lib/tagebuch'
+import { TagebuchPostContent } from '../../lib/utils'
 
 type Props = {
-  posts: PostContent[]
+  posts: TagebuchPostContent[]
   pagination: {
     current: number
     pages: number

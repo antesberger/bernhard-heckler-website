@@ -1,81 +1,21 @@
-import fs from 'fs'
-import matter from 'gray-matter'
 import path from 'path'
-import yaml from 'js-yaml'
-
-const postsDirectory = path.join(process.cwd(), 'src/pages/tagebuch')
-
-export type PostContent = {
-  readonly date: string
-  readonly title: string
-  readonly slug: string
-  readonly tags?: string[]
-}
+import { PostContent, fetchPostsOfCollection } from './utils'
 
 let postCache: PostContent[]
+const postsDirectory = path.join(process.cwd(), 'src/pages/tagebuch')
 
-function fetchPostContent(): PostContent[] {
-  if (postCache) {
-    return postCache
-  }
-  // Get file names under /posts
-  const fileNames = fs.readdirSync(postsDirectory)
-
-  const allPostsData = fileNames
-    .filter((it) => it.endsWith('.mdx'))
-    .map((fileName) => {
-      // Read markdown file as string
-      const fullPath = path.join(postsDirectory, fileName)
-      const fileContents = fs.readFileSync(fullPath, 'utf8')
-
-      // Use gray-matter to parse the post metadata section
-      const matterResult = matter(fileContents, {
-        engines: {
-          yaml: (s) => yaml.safeLoad(s, { schema: yaml.JSON_SCHEMA }) as object,
-        },
-      })
-      const matterData = matterResult.data as {
-        date: string
-        title: string
-        tags: string[]
-        slug: string
-      }
-
-      matterData.slug = matterData.slug.toLowerCase()
-      const slug = fileName.replace(/\.mdx$/, '')
-
-      // Validate slug string
-      if (matterData.slug !== slug) {
-        throw new Error(
-          'slug field not match with the path of its content source'
-        )
-      }
-
-      return matterData
-    })
-  // Sort posts by date
-  postCache = allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1
-    } else {
-      return -1
-    }
-  })
-  return postCache
+export function getMostRecentPost(): PostContent | null {
+  const posts = postCache ?? fetchPostsOfCollection(postsDirectory)
+  postCache = posts
+  return posts.length > 0 ? posts[0] : null
 }
 
-export function countPosts(tag?: string): number {
-  return fetchPostContent().filter(
-    (it) => !tag || (it.tags && it.tags.includes(tag))
-  ).length
+export function countPosts(): number {
+  const posts = postCache ?? fetchPostsOfCollection(postsDirectory)
+  return posts.length
 }
 
-export function listPostContent(
-  page: number,
-  limit: number,
-  tag?: string
-): PostContent[] {
-  return fetchPostContent()
-    .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
-    .slice((page - 1) * limit, page * limit)
+export function listPostContent(page: number, limit: number): PostContent[] {
+  const posts = postCache ?? fetchPostsOfCollection(postsDirectory)
+  return posts.slice((page - 1) * limit, page * limit)
 }

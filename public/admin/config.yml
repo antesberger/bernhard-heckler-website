@@ -53,6 +53,12 @@ collections:
           - label: "Site title"
             name: "intro_text"
             widget: "markdown"
+          - label: "Buch Feature"
+            name: "book_featured"
+            widget: "relation"
+            collection: "books"
+            search_fields: ["title"]
+            value_field: "title"
 
   - name: "books"
     label: "Bücher"

@@ -1,7 +1,7 @@
 import React from 'react'
-import { PostContent } from '../lib/tagebuch'
 import PostItem from './PostItem'
 import Pagination from './Pagination'
+import { PostContent } from '../lib/utils'
 
 type Props = {
   posts: PostContent[]
@@ -17,7 +17,7 @@ export default function PostList({ posts, pagination }: Props) {
         <ul>
           {posts.map((it, i) => (
             <li key={i}>
-              <PostItem post={it} />
+              <PostItem post={it} collection='journalismus' />
             </li>
           ))}
         </ul>

@@ -5,14 +5,11 @@ import OpenGraphMeta from '../../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../../components/meta/TwitterCardMeta'
 import PostList from '../../components/PostList'
 import config from '../../lib/config'
-import {
-  PostContent,
-  listPostContent,
-  countPosts,
-} from '../../lib/journalismus'
+import { listPostContent, countPosts } from '../../lib/journalismus'
+import { JournalismusPostContent } from '../../lib/utils'
 
 type Props = {
-  posts: PostContent[]
+  posts: JournalismusPostContent[]
   pagination: {
     current: number
     pages: number
@@ -20,7 +17,7 @@ type Props = {
 }
 export default function Index({ posts, pagination }: Props) {
   const url = '/journalismus'
-  const title = 'All posts'
+  const title = 'Alle Reportagen und Essays'
   return (
     <Layout>
       <BasicMeta url={url} title={title} />
