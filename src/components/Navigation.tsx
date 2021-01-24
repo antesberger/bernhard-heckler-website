@@ -19,7 +19,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className='absolute z-10 flex justify-center w-full p-s absolute text-white'>
+    <nav className='absolute z-10 flex justify-center w-full py-md absolute text-white'>
       <Burger active={active} onClick={() => setActive(!active)} />
       <div className='flex justify-between items-center w-full max-w-xl'>
         <Link href='/'>
@@ -27,7 +27,7 @@ export default function Navigation() {
             <h1 className='font-bold text-xl'>Bernhard Heckler</h1>
           </a>
         </Link>
-        <ul className='flex space-x-s'>
+        <ul className='flex space-x-md'>
           {links.map((link, index) => (
             <li key={index}>
               <Link href={link.href}>

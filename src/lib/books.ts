@@ -4,10 +4,10 @@ import { PostContent, fetchPostsOfCollection } from './utils'
 let postCache: PostContent[]
 const postsDirectory = path.join(process.cwd(), 'src/pages/buecher')
 
-export function getMostRecentPost(): PostContent | null {
+export function getMostRecentBookPost(count: number): PostContent[] {
   const posts = postCache ?? fetchPostsOfCollection(postsDirectory)
   postCache = posts
-  return posts.length > 0 ? posts[0] : null
+  return posts.length > 0 ? posts.slice(0, count) : []
 }
 
 export function countPosts(): number {

@@ -1,9 +1,9 @@
 const spacings = {
   xxs: 4,
   xs: 8,
-  s: 16,
-  m: 24,
-  l: 32,
+  sm: 16,
+  md: 24,
+  lg: 32,
   xl: 48,
   xxl: 56,
   xxxl: 80,
@@ -61,9 +61,9 @@ module.exports = {
       '100%': '100%',
       xxs: `${spacings.xxs}px`, //4px
       xs: `${spacings.xs}px`, //8px
-      s: `${spacings.s}px`, //16px
-      m: `${spacings.m}px`, //24px
-      l: `${spacings.l}px`, //32px
+      sm: `${spacings.sm}px`, //16px
+      md: `${spacings.md}px`, //24px
+      lg: `${spacings.lg}px`, //32px
       xl: `${spacings.xl}px`, //48px
       xxl: `${spacings.xxl}px`, //56px
       xxxl: `${spacings.xxxl}px`, //80px
@@ -84,7 +84,7 @@ module.exports = {
     fontWeight: {
       normal: 300,
       semibold: 400,
-      bold: 500,
+      bold: 700,
     },
     fontSize: {
       xxs: '0.75rem', // 12px
@@ -128,9 +128,9 @@ module.exports = {
         0: '0px',
         xxs: `${spacings.xxs}px`, //4px
         xs: `${spacings.xs}px`, //8px
-        s: `${spacings.s}px`, //16px
-        m: `${spacings.m}px`, //24px
-        l: `${spacings.l}px`, //32px
+        sm: `${spacings.sm}px`, //16px
+        md: `${spacings.md}px`, //24px
+        lg: `${spacings.lg}px`, //32px
         xl: `${spacings.xl}px`, //48px
         xxl: `${spacings.xxl}px`, //56px
         xxxl: `${spacings.xxxl}px`, //80px
@@ -147,9 +147,9 @@ module.exports = {
         auto: 'auto',
         xxs: `${spacings.xxs}px`, //4px
         xs: `${spacings.xs}px`, //8px
-        s: `${spacings.s}px`, //16px
-        m: `${spacings.m}px`, //24px
-        l: `${spacings.l}px`, //32px
+        sm: `${spacings.sm}px`, //16px
+        md: `${spacings.md}px`, //24px
+        lg: `${spacings.lg}px`, //32px
         xl: `${spacings.xl}px`, //48px
         xxl: `${spacings.xxl}px`, //56px
         xxxl: `${spacings.xxxl}px`, //80px
@@ -159,9 +159,9 @@ module.exports = {
         auto: 'auto',
         xxs: `${spacings.xxs}px`, //4px
         xs: `${spacings.xs}px`, //8px
-        s: `${spacings.s}px`, //16px
-        m: `${spacings.m}px`, //24px
-        l: `${spacings.l}px`, //32px
+        sm: `${spacings.sm}px`, //16px
+        md: `${spacings.md}px`, //24px
+        lg: `${spacings.lg}px`, //32px
         xl: `${spacings.xl}px`, //48px
         xxl: `${spacings.xxl}px`, //56px
         xxxl: `${spacings.xxxl}px`, //80px
