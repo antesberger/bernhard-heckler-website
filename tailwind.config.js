@@ -9,6 +9,29 @@ const spacings = {
   xxxl: 80,
 }
 
+const colors = {
+  transparent: 'transparent',
+  current: 'currentColor',
+  white: '#FFFFFF',
+  black: '#000000',
+  inherit: 'inherit',
+  grey: {
+    100: '#a2a2a2',
+    200: '#d0d0d0',
+    300: '#777777',
+    400: '#4e4e4e',
+    500: '#292929',
+  },
+  yellow: {
+    100: '#fff9de',
+    200: '#fff4bd',
+    300: '#ffee98',
+    400: '#ffe872',
+    500: '#ffe148',
+    600: '#ffda1a',
+  },
+}
+
 module.exports = {
   purge: {
     content: ['./src/**/*.tsx', './public/index.html'],
@@ -24,7 +47,13 @@ module.exports = {
       ],
     },
   },
+  corePlugins: {
+    container: false,
+  },
   theme: {
+    colors: {
+      ...colors,
+    },
     spacing: {
       '25%': '25%',
       '50%': '50%',
@@ -50,13 +79,19 @@ module.exports = {
       xl: '1440px',
     },
     fontFamily: {
-      sans: ['ArtegraSans', 'Helvetica', 'sans-serif'],
+      sans: ['Lato', 'Helvetica', 'sans-serif'],
+    },
+    fontWeight: {
+      normal: 300,
+      semibold: 400,
+      bold: 500,
     },
     fontSize: {
       xxs: '0.75rem', // 12px
       xs: '0.875rem', // 14px
       sm: '0.9375rem', // 15px
       base: '1rem', // 16px
+      md: '1.25rem', // 20px
       lg: '1.5rem', // 24px
       xl: '1.875rem', // 30px
       inherit: 'inherit',
@@ -89,6 +124,17 @@ module.exports = {
       none: 'none',
     },
     extend: {
+      inset: {
+        0: '0px',
+        xxs: `${spacings.xxs}px`, //4px
+        xs: `${spacings.xs}px`, //8px
+        s: `${spacings.s}px`, //16px
+        m: `${spacings.m}px`, //24px
+        l: `${spacings.l}px`, //32px
+        xl: `${spacings.xl}px`, //48px
+        xxl: `${spacings.xxl}px`, //56px
+        xxxl: `${spacings.xxxl}px`, //80px
+      },
       maxWidth: {
         xxs: '165px',
         xs: '320px',
@@ -125,11 +171,12 @@ module.exports = {
         n1: '-1',
       },
       borderWidth: {
-        1: '1px',
+        3: '3px',
       },
     },
   },
   variants: {
+    inset: ['responsive', 'hover', 'focus'],
     extend: {
       textColor: ['focus', 'focus-within'],
       borderColor: ['focus', 'focus-within'],
