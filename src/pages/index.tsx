@@ -13,6 +13,10 @@ import {
 import { getMostRecentBookPost } from '../lib/books'
 import { getMostRecentJournalismusPost } from '../lib/journalismus'
 import home from '../lib/home'
+import HighlightBlock from '../components/HighlightBlock'
+import ImageWithText from '../components/ImageWithText'
+import moment from 'moment'
+import { useRef } from 'react'
 
 type IndexProps = {
   featuredBookPost: BookPostContent
@@ -25,30 +29,47 @@ const Index: React.FC<IndexProps> = ({
   featuredTagebuchPost,
   featuredJournalismusPosts,
 }: IndexProps) => {
+  const heroRef = useRef<HTMLDivElement | null>(null)
+
   return (
-    <Layout>
+    <Layout heroRef={heroRef}>
       <BasicMeta url={'/'} />
       <OpenGraphMeta url={'/'} />
       <TwitterCardMeta url={'/'} />
 
-      <Hero image='images/bernhard_heckler_01.jpg' />
+      <div ref={heroRef}>
+        <Hero image='images/bernhard_heckler_01.jpg' />
+      </div>
 
-      <div className='container space-y-lg my-lg'>
+      <div className='container space-y-xxxl my-xxxl'>
         <section>
           <h1>{home.intro_headline}</h1>
           <p>{home.intro_text}</p>
         </section>
 
         <section>
-          <h1>{featuredBookPost.data.title}</h1>
-          <p>{featuredBookPost.content}</p>
+          <ImageWithText
+            title={featuredBookPost.data.title}
+            text={featuredBookPost.content}
+            image={featuredBookPost.data.image}
+          />
         </section>
+      </div>
 
-        <section>
+      <section>
+        <HighlightBlock>
           <h1>{featuredTagebuchPost.data.title}</h1>
+          <h4 className='text-yellow-500 -mt-sm mb-sm'>
+            {moment(featuredTagebuchPost.data.date).format('DD.MM.YYYY')}
+          </h4>
           <p>{featuredTagebuchPost.content}</p>
-        </section>
+          <div className='cursor-pointer flex text-yellow-500 justify-end mt-lg'>
+            <a href='/tagebuch'>Mehr</a>
+          </div>
+        </HighlightBlock>
+      </section>
 
+      <div className='container space-y-xxxl my-xxxl'>
         <section>
           <ul>
             {featuredJournalismusPosts.map((JournalismusPost, index) => (

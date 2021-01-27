@@ -6,7 +6,7 @@ type HeroProps = {
 
 const Hero = ({ image }: HeroProps) => {
   return (
-    <div className='relative -mt-nav'>
+    <div id='hero' className='relative -mt-nav'>
       <img className='w-full' src={image} alt='Bernhard Heckler Foto' />
       <div className='absolute right-xs bottom-xs'>
         <SocialList />

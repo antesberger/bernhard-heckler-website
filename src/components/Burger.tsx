@@ -1,51 +1,50 @@
 type Props = {
-  active: boolean;
-  onClick: () => void;
-};
-export default function Burger({ active, onClick }: Props) {
+  active: boolean
+  inverted: boolean
+  onClick: () => void
+}
+export default function Burger({ active, inverted, onClick }: Props) {
   return (
-    <div className={"container " + (active ? "active" : "")} onClick={onClick}>
-      <div className={"meat meat-1"} />
-      <div className={"meat meat-2"} />
-      <div className={"meat meat-3"} />
+    <div className={'container ' + (active ? 'active' : '')} onClick={onClick}>
+      <div className={'meat meat-1'} />
+      <div className={'meat meat-2'} />
+      <div className={'meat meat-3'} />
       <style jsx>
         {`
           .container {
-            position: fixed;
-            width: 38px;
-            height: 38px;
-            cursor: pointer;
-            top: 1rem;
-            left: 1.25rem;
+            position: relative;
             z-index: 2;
-            background-color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            items: center;
           }
           .meat {
             position: absolute;
             width: 28px;
             height: 2px;
-            background: #222;
-            top: calc(50% - 2px / 2);
-            left: calc(50% - 28px / 2);
+            background: ${inverted || active ? 'black' : 'white'};
             transition: all 150ms ease-in;
           }
           .meat-1 {
-            transform: translateY(-10px);
+            transform: translateY(0px);
           }
           .meat-2 {
-            width: calc(28px - 6px);
-          }
-          .meat-3 {
             transform: translateY(10px);
           }
+          .meat-3 {
+            transform: translateY(20px);
+          }
           .active .meat-1 {
-            transform: rotate(45deg);
+            transform: translateY(10px) rotate(45deg);
           }
           .active .meat-2 {
             opacity: 0;
           }
           .active .meat-3 {
-            transform: rotate(-45deg);
+            transform: translateY(10px) rotate(-45deg);
           }
 
           @media (min-width: 769px) {
@@ -56,5 +55,5 @@ export default function Burger({ active, onClick }: Props) {
         `}
       </style>
     </div>
-  );
+  )
 }

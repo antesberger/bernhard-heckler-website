@@ -15,6 +15,7 @@ const colors = {
   white: '#FFFFFF',
   black: '#000000',
   inherit: 'inherit',
+  green: '#074C40',
   grey: {
     100: '#a2a2a2',
     200: '#d0d0d0',
@@ -55,6 +56,7 @@ module.exports = {
       ...colors,
     },
     spacing: {
+      0: 0,
       '25%': '25%',
       '50%': '50%',
       '75%': '75%',
