@@ -1,34 +1,32 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import Burger from './Burger'
-import { useState, MutableRefObject, useEffect, useRef } from 'react'
+import {
+  useState,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useCallback,
+} from 'react'
 
 type Props = {
   heroRef?: MutableRefObject<HTMLDivElement>
 }
 
 export default function Navigation({ heroRef }: Props) {
-  const router = useRouter()
   const [active, setActive] = useState(false)
-  const [heroHeight, setHeroHeight] = useState<number | undefined>()
   const [inverted, setInverted] = useState(false)
   const navbarRef = useRef<HTMLDivElement | null>(null)
 
-  useEffect(() => {
-    if (heroRef) {
-      const heroHeight = heroRef.current.clientHeight
-      setHeroHeight(heroHeight)
-    } else {
-      setHeroHeight(0)
-      setInverted(true)
-    }
+  const handleScroll = useCallback(() => {
+    setInverted(
+      (heroRef ? heroRef.current.clientHeight : 0) -
+        navbarRef.current.clientHeight <
+        window.scrollY
+    )
   }, [heroRef])
 
-  const handleScroll = () => {
-    setInverted(heroHeight - navbarRef.current.clientHeight < window.scrollY)
-  }
-
   useEffect(() => {
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
@@ -50,7 +48,7 @@ export default function Navigation({ heroRef }: Props) {
   return (
     <nav
       ref={navbarRef}
-      className={`sticky h-nav top-0 z-10 flex items-center justify-between w-full px-sm transition-all ${
+      className={`sticky h-nav top-0 z-10 flex items-center justify-between w-full px-sm transition-all duration-200 ${
         inverted ? 'text-black bg-white' : 'text-white'
       } ${active ? 'bg-white text-black' : ''}`}
     >
@@ -68,7 +66,7 @@ export default function Navigation({ heroRef }: Props) {
                 }
               : { top: '-120%' }
           }
-          className={`transition-all flex left-0 md:space-x-md absolute md:relative w-full md:w-auto flex-col md:flex-row bg-white md:bg-transparent p-sm space-y-md md:space-y-0 ${
+          className={`transition-all duration-200 flex left-0 md:space-x-md absolute md:relative w-full md:w-auto flex-col md:flex-row bg-white md:bg-transparent p-sm space-y-md md:space-y-0 ${
             active ? 'text-black' : ''
           }`}
         >

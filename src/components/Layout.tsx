@@ -6,6 +6,7 @@ type Props = {
   children: React.ReactNode[]
   heroRef?: MutableRefObject<HTMLDivElement>
 }
+
 export default function Layout({ children, heroRef }: Props) {
   return (
     <div className='root'>

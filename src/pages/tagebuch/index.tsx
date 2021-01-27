@@ -7,6 +7,8 @@ import PostList from '../../components/PostList'
 import config from '../../lib/config'
 import { listPostContent, countPosts } from '../../lib/tagebuch'
 import { TagebuchPostContent } from '../../lib/utils'
+import Pagination from '../../components/Pagination'
+import moment from 'moment'
 
 type Props = {
   posts: TagebuchPostContent[]
@@ -23,7 +25,28 @@ export default function Index({ posts, pagination }: Props) {
       <BasicMeta url={url} title={title} />
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
-      <PostList posts={posts} pagination={pagination} />
+
+      <div>
+        <ul className='container my-xxxl space-y-xxxl'>
+          {posts.map((post, index) => (
+            <li key={index}>
+              <h1>{post.data.title}</h1>
+              <h4 className='text-grey-300 -mt-sm mb-sm'>
+                {moment(post.data.date).format('DD.MM.YYYY')}
+              </h4>
+              <p>{post.content}</p>
+            </li>
+          ))}
+        </ul>
+        <Pagination
+          current={pagination.current}
+          pages={pagination.pages}
+          link={{
+            href: (page) => (page === 1 ? '/posts' : '/posts/page/[page]'),
+            as: (page) => (page === 1 ? null : '/posts/page/' + page),
+          }}
+        />
+      </div>
     </Layout>
   )
 }

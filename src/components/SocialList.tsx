@@ -11,6 +11,7 @@ export function SocialList({}) {
         href={config.twitter_account}
         target='_blank'
         rel='noopener'
+        className='p-sm'
       >
         <Twitter width={24} height={24} fill={'white'} />
       </a>
@@ -19,6 +20,7 @@ export function SocialList({}) {
         href={config.instagram_account}
         target='_blank'
         rel='noopener'
+        className='p-sm'
       >
         <Instagram width={24} height={24} fill={'white'} />
       </a>
