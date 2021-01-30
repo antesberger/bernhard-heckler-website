@@ -39,7 +39,12 @@ const Index: React.FC<IndexProps> = ({
       <TwitterCardMeta url={'/'} />
 
       <div ref={heroRef}>
-        <Hero image='images/bernhard_heckler_01.jpg' />
+        <Hero
+          image_xl={home.image_xl}
+          image_lg={home.image_lg}
+          image_md={home.image_md}
+          image_loading={home.image_loading}
+        />
       </div>
 
       <div className='container space-y-xxxl my-md md:my-xxxl'>

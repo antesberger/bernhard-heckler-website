@@ -54,7 +54,7 @@ export default function Navigation({ heroRef }: Props) {
   return (
     <nav
       ref={navbarRef}
-      className={`sticky h-nav top-0 z-10 flex items-center justify-between w-full px-sm transition-all duration-200 ${
+      className={`sticky h-nav top-0 z-20 flex items-center justify-between w-full px-sm transition-all duration-200 ${
         inverted ? 'text-black bg-white' : 'text-white'
       } ${active && windowWidth < 768 && 'bg-white text-black'}`}
     >
@@ -74,7 +74,7 @@ export default function Navigation({ heroRef }: Props) {
                 : { top: '-120%' }
               : {}
           }
-          className={`z-n1 md:z-10 transition-all duration-200 flex left-0 md:space-x-md absolute md:relative w-full md:w-auto flex-col md:flex-row bg-white md:bg-transparent p-sm space-y-md md:space-y-0 ${
+          className={`z-n1 md:z-20 transition-all duration-200 flex left-0 md:space-x-md absolute md:relative w-full md:w-auto flex-col md:flex-row bg-white md:bg-transparent p-sm space-y-md md:space-y-0 ${
             windowWidth < 768
               ? active
                 ? 'text-black opacity-100'

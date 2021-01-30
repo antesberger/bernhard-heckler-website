@@ -48,25 +48,25 @@ collections:
         description: "Home Page Settings"
         fields:
           - name: "image xl"
-            label: "image-xl"
+            label: "image_xl"
             widget: "image"
             media_library:
               config:
                 multiple: false
           - name: "image lg"
-            label: "image-lg"
+            label: "image_lg"
             widget: "image"
             media_library:
               config:
                 multiple: false
           - name: "image md"
-            label: "image-md"
+            label: "image_md"
             widget: "image"
             media_library:
               config:
                 multiple: false
           - name: "image loading"
-            label: "image-loading"
+            label: "imag_loading"
             widget: "image"
             media_library:
               config:

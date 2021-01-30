@@ -2,8 +2,8 @@
   "intro_headline": "Schriftsteller & Journalist",
   "intro_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip  ...",
   "book_featured": "Das Liebesleben der Pinguine",
-  "image xl": "/images/bernhard_heckler_01_xl.jpg",
-  "image lg": "/images/bernhard_heckler_01_lg.jpg",
-  "image md": "/images/bernhard_heckler_01_md.jpg",
-  "image loading": "/images/bernhard_heckler_01_loading.jpg"
+  "image_xl": "/images/bernhard_heckler_01_xl.jpg",
+  "image_lg": "/images/bernhard_heckler_01_lg.jpg",
+  "image_md": "/images/bernhard_heckler_01_md.jpg",
+  "image_loading": "/images/bernhard_heckler_01_loading.jpg"
 }

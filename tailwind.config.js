@@ -16,6 +16,7 @@ const colors = {
   black: '#000000',
   inherit: 'inherit',
   green: '#074C40',
+
   grey: {
     100: '#a2a2a2',
     200: '#d0d0d0',
@@ -194,6 +195,10 @@ module.exports = {
         8: '8',
       },
     },
+    filter: {
+      none: 'none',
+      blur: 'blur(10px)',
+    },
   },
   variants: {
     inset: ['responsive', 'hover', 'focus'],
@@ -207,6 +212,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('tailwindcss-filters'),
     require('tailwindcss-truncate-multiline')(),
     require('tailwind-bootstrap-grid')({
       generateNoGutters: true,
