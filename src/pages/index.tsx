@@ -42,7 +42,7 @@ const Index: React.FC<IndexProps> = ({
         <Hero image='images/bernhard_heckler_01.jpg' />
       </div>
 
-      <div className='container space-y-xxxl my-xxxl'>
+      <div className='container space-y-xxxl my-md md:my-xxxl'>
         <section>
           <h1>{home.intro_headline}</h1>
           <p>{home.intro_text}</p>
@@ -74,7 +74,7 @@ const Index: React.FC<IndexProps> = ({
         <section>
           <div className='row'>
             {featuredJournalismusPosts.map((JournalismusPost, index) => (
-              <div className='col-12 sm:col-6 md:col-4' key={index}>
+              <div className='col-12 sm:col-6 md:col-4 my-md' key={index}>
                 <Card post={JournalismusPost} />
               </div>
             ))}
