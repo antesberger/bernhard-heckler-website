@@ -72,15 +72,9 @@ collections:
               config:
                 multiple: false
           - label: "Into Headline"
-          - name: "image xl"
-            label: "image-xl"
-            widget: "image"
-            media_library:
-              config:
-                multiple: false
             name: "intro_headline"
             widget: "string"
-          - label: "Intro Ttext"
+          - label: "Intro Text"
             name: "intro_text"
             widget: "markdown"
           - label: "Book Feature"
