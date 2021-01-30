@@ -47,13 +47,13 @@ collections:
         file: "general_config/home.json"
         description: "Home Page Settings"
         fields:
-          - label: "URL"
+          - label: "Into Headline"
             name: "intro_headline"
             widget: "string"
-          - label: "Site title"
+          - label: "Intro Ttext"
             name: "intro_text"
             widget: "markdown"
-          - label: "Buch Feature"
+          - label: "Book Feature"
             name: "book_featured"
             widget: "relation"
             collection: "books"
@@ -66,13 +66,8 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     create: true
-    slug: "{{slug}}"
-    identifier_field: slug
     summary: "{{title}}"
     fields:
-      - label: "Slug"
-        name: "slug"
-        widget: "string"
       - label: "Title"
         name: "title"
         widget: "string"
@@ -90,7 +85,7 @@ collections:
         widget: "image"
         media_library:
           config:
-            multiple: true
+            multiple: false
         
   - name: "jornalismus"
     label: "Journalismus"
@@ -98,21 +93,19 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     create: true
-    slug: "{{slug}}"
-    identifier_field: slug
     summary: "{{title}}"
     fields:
-      - label: "Slug"
-        name: "slug"
-        widget: "string"
-      - label: "Publisher"
-        name: "publicher"
-        widget: "string"
-      - label: "Publisher URL"
-        name: "publicher_url"
-        widget: "string"
       - label: "Title"
         name: "title"
+        widget: "string"
+      - label: "Text Type"
+        name: "type"
+        widget: "string"
+      - label: "Publisher"
+        name: "publisher"
+        widget: "string"
+      - label: "Text URL"
+        name: "url"
         widget: "string"
       - label: "Publish Date"
         name: "date"
@@ -120,6 +113,13 @@ collections:
         format: "YYYY-MM-DD"
         dateFormat: "YYYY-MM-DD"
         timeFormat: false
+      - name: "image"
+        label: "image"
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            multiple: false
       - label: "Body"
         name: "body"
         widget: "markdown"
@@ -130,13 +130,8 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     create: true
-    slug: "{{slug}}"
-    identifier_field: slug
     summary: "{{title}}"
     fields:
-      - label: "Slug"
-        name: "slug"
-        widget: "string"
       - label: "Title"
         name: "title"
         widget: "string"

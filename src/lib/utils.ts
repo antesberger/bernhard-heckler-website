@@ -6,7 +6,6 @@ import yaml from 'js-yaml'
 export interface BookPostData {
   readonly date: string
   readonly title: string
-  readonly slug: string
   readonly image: string
 }
 
@@ -17,9 +16,10 @@ export interface BookPostContent extends matter.GrayMatterFile<string> {
 export interface JournalismusPostData {
   readonly date: string
   readonly title: string
-  readonly slug: string
+  readonly image: string
   readonly publisher: string
-  readonly publisherUrl: string
+  readonly url: string
+  readonly type: string
 }
 
 export interface JournalismusPostContent extends matter.GrayMatterFile<string> {
@@ -29,7 +29,6 @@ export interface JournalismusPostContent extends matter.GrayMatterFile<string> {
 export interface TagebuchPostData {
   readonly date: string
   readonly title: string
-  readonly slug: string
 }
 
 export interface TagebuchPostContent extends matter.GrayMatterFile<string> {
@@ -61,19 +60,6 @@ export function fetchPostsOfCollection(postsDirectory): PostContent[] {
       })
 
       const post = matterResult as PostContent
-      post.data = {
-        ...(matterResult.data as PostData),
-        slug: matterResult.data.slug.toLowerCase(),
-      }
-
-      const slug = fileName.replace(/\.mdx$/, '')
-
-      // Validate slug string
-      if (post.data.slug !== slug) {
-        throw new Error(
-          'slug field not match with the path of its content source'
-        )
-      }
 
       return post
     })

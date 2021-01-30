@@ -17,6 +17,7 @@ import HighlightBlock from '../components/HighlightBlock'
 import ImageWithText from '../components/ImageWithText'
 import moment from 'moment'
 import { useRef } from 'react'
+import Card from '../components/Card'
 
 type IndexProps = {
   featuredBookPost: BookPostContent
@@ -71,13 +72,13 @@ const Index: React.FC<IndexProps> = ({
 
       <div className='container space-y-xxxl my-xxxl'>
         <section>
-          <ul>
+          <div className='row'>
             {featuredJournalismusPosts.map((JournalismusPost, index) => (
-              <li key={index}>
-                <h2>{JournalismusPost.data.title}</h2>
-              </li>
+              <div className='col-12 sm:col-6 md:col-4' key={index}>
+                <Card post={JournalismusPost} />
+              </div>
             ))}
-          </ul>
+          </div>
         </section>
       </div>
     </Layout>
