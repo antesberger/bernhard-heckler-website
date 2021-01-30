@@ -79,6 +79,9 @@ const Index: React.FC<IndexProps> = ({
               </div>
             ))}
           </div>
+          <div className='cursor-pointer flex text-yellow-500 justify-end mt-lg'>
+            <a href='/journalismus'>Mehr</a>
+          </div>
         </section>
       </div>
     </Layout>

@@ -57,10 +57,12 @@ module.exports = {
     },
     spacing: {
       0: 0,
+      '5%': '5%',
       '25%': '25%',
       '50%': '50%',
       '75%': '75%',
       '100%': '100%',
+      '110%': '110%',
       xxs: `${spacings.xxs}px`, //4px
       xs: `${spacings.xs}px`, //8px
       sm: `${spacings.sm}px`, //16px
@@ -150,6 +152,7 @@ module.exports = {
         nav: '100px',
       },
       minHeight: {
+        none: 'none',
         auto: 'auto',
         xxs: `${spacings.xxs}px`, //4px
         xs: `${spacings.xs}px`, //8px
@@ -162,6 +165,7 @@ module.exports = {
         'full-screen': '100vh',
       },
       minWidth: {
+        none: 'none',
         auto: 'auto',
         xxs: `${spacings.xxs}px`, //4px
         xs: `${spacings.xs}px`, //8px
@@ -173,6 +177,9 @@ module.exports = {
         xxxl: `${spacings.xxxl}px`, //80px
         'full-screen': '100vh',
       },
+      maxWidth: {
+        none: 'none',
+      },
       zIndex: {
         n1: '-1',
       },
@@ -180,11 +187,19 @@ module.exports = {
         3: '3px',
       },
     },
+    truncate: {
+      lines: {
+        3: '3',
+        5: '5',
+        8: '8',
+      },
+    },
   },
   variants: {
     inset: ['responsive', 'hover', 'focus'],
     extend: {
-      textColor: ['focus', 'focus-within'],
+      width: ['hover', 'group-hover', 'focus'],
+      margin: ['responsive', 'hover', 'group-hover', 'focus'],
       borderColor: ['focus', 'focus-within'],
       backgroundColor: ['focus', 'focus-within', 'disabled'],
       opacity: ['disabled'],
@@ -192,6 +207,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('tailwindcss-truncate-multiline')(),
     require('tailwind-bootstrap-grid')({
       generateNoGutters: true,
       containerMaxWidths: {

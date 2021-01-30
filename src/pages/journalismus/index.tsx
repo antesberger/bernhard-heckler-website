@@ -8,6 +8,7 @@ import { listPostContent, countPosts } from '../../lib/journalismus'
 import { JournalismusPostContent } from '../../lib/utils'
 import moment from 'moment'
 import Pagination from '../../components/Pagination'
+import Card from '../../components/Card'
 
 type Props = {
   posts: JournalismusPostContent[]
@@ -25,18 +26,18 @@ export default function Index({ posts, pagination }: Props) {
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
 
-      <div>
-        <ul className='container my-xxxl space-y-xxxl'>
-          {posts.map((post, index) => (
-            <li key={index}>
-              <h1>{post.data.title}</h1>
-              <h4 className='text-grey-300 -mt-sm mb-sm'>
-                {moment(post.data.date).format('DD.MM.YYYY')}
-              </h4>
-              <p>{post.content}</p>
-            </li>
+      <div className='container'>
+        <div className='row'>
+          {posts.map((JournalismusPost, index) => (
+            <div className='col-12 sm:col-6 md:col-4 my-md' key={index}>
+              <Card post={JournalismusPost} />
+            </div>
           ))}
-        </ul>
+        </div>
+        <div className='cursor-pointer flex text-yellow-500 justify-end mt-lg'>
+          <a href='/journalismus'>Mehr</a>
+        </div>
+
         <Pagination
           current={pagination.current}
           pages={pagination.pages}
