@@ -47,10 +47,8 @@ export default function Navigation({ heroRef }: Props) {
   ]
 
   useEffect(() => {
-    const resizeHandler = () => setWindowWidth(window.innerWidth)
     setWindowWidth(window.innerWidth)
-    window.addEventListener('resize', () => resizeHandler)
-    return window.removeEventListener('resize', resizeHandler)
+    window.addEventListener('resize', () => setWindowWidth(window.innerWidth))
   }, [])
 
   return (

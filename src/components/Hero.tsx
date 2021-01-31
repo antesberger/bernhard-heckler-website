@@ -27,10 +27,11 @@ const Hero = ({ image_xl, image_lg, image_md, image_loading }: HeroProps) => {
   }, [loaderImageRef])
 
   useEffect(() => {
-    const resizeHandler = () => setHeroHeight(loaderImageRef.current.height)
+    const resizeHandler = () => {
+      console.log('resize')
+      setHeroHeight(loaderImageRef.current.height)
+    }
     window.addEventListener('resize', resizeHandler)
-
-    return window.removeEventListener('resize', resizeHandler)
   }, [])
 
   return (
@@ -45,21 +46,21 @@ const Hero = ({ image_xl, image_lg, image_md, image_loading }: HeroProps) => {
             imgLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           srcSet={`
-          https://bernhardheckler.de${image_md} 768w, 
-          https://bernhardheckler.de${image_lg} 1160w,
-          https://bernhardheckler.de${image_xl} 1440w`}
+          ${image_md} 768w, 
+          ${image_lg} 1160w,
+          ${image_xl} 1440w`}
           sizes='
           (max-width: 768px) 768px,
           (max-width: 1160px) 1160px,
           1440px'
-          src={`https://bernhardheckler.de${image_xl}`}
+          src={image_xl}
           alt='Bernhard Heckler Foto'
           style={{ minHeight: '500px', maxHeight: '95vh' }}
         />
         <img
           ref={loaderImageRef}
           className='absolute inset-0 w-full object-cover filter-blur'
-          src={`https://bernhardheckler.de${image_loading}`}
+          src={image_loading}
           alt='Bernhard Heckler Foto'
           style={{ minHeight: '500px', maxHeight: '95vh' }}
           onLoad={() => {
