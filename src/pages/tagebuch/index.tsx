@@ -3,12 +3,12 @@ import Layout from '../../components/Layout'
 import BasicMeta from '../../components/meta/BasicMeta'
 import OpenGraphMeta from '../../components/meta/OpenGraphMeta'
 import TwitterCardMeta from '../../components/meta/TwitterCardMeta'
-import PostList from '../../components/PostList'
 import config from '../../lib/config'
 import { listPostContent, countPosts } from '../../lib/tagebuch'
 import { TagebuchPostContent } from '../../lib/utils'
 import Pagination from '../../components/Pagination'
 import moment from 'moment'
+import ReactMarkdown from 'react-markdown'
 
 type Props = {
   posts: TagebuchPostContent[]
@@ -34,7 +34,7 @@ export default function Index({ posts, pagination }: Props) {
               <h4 className='text-grey-300 -mt-sm mb-sm'>
                 {moment(post.data.date).format('DD.MM.YYYY')}
               </h4>
-              <p>{post.content}</p>
+              <ReactMarkdown>{post.content}</ReactMarkdown>
             </li>
           ))}
         </ul>

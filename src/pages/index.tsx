@@ -18,6 +18,7 @@ import ImageWithText from '../components/ImageWithText'
 import moment from 'moment'
 import { useRef } from 'react'
 import Card from '../components/Card'
+import ReactMarkdown from 'react-markdown'
 
 type IndexProps = {
   featuredBookPost: BookPostContent
@@ -50,7 +51,7 @@ const Index: React.FC<IndexProps> = ({
       <div className='container space-y-xxxl my-md md:my-xxxl'>
         <section>
           <h1>{home.intro_headline}</h1>
-          <p>{home.intro_text}</p>
+          <ReactMarkdown>{home.intro_text}</ReactMarkdown>
         </section>
 
         <section>
@@ -68,7 +69,7 @@ const Index: React.FC<IndexProps> = ({
           <h4 className='text-yellow-500 -mt-sm mb-sm'>
             {moment(featuredTagebuchPost.data.date).format('DD.MM.YYYY')}
           </h4>
-          <p>{featuredTagebuchPost.content}</p>
+          <ReactMarkdown>{featuredTagebuchPost.content}</ReactMarkdown>
           <div className='cursor-pointer flex text-yellow-500 justify-end mt-lg'>
             <a href='/tagebuch'>Mehr</a>
           </div>

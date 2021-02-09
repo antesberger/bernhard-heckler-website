@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
 
 type Props = {
   title: string
@@ -14,7 +15,7 @@ export default function ImageWithText({ title, text, image }: Props) {
       </div>
       <div className='col-12 md:col-8'>
         <h1>{title}</h1>
-        <p>{text}</p>
+        <ReactMarkdown>{text}</ReactMarkdown>
       </div>
     </div>
   )
