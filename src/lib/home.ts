@@ -7,6 +7,7 @@ type Home = {
   readonly image_lg: string
   readonly image_md: string
   readonly image_loading: string
+  readonly image_credits: string
 }
 
 export default home as Home

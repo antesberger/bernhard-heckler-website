@@ -6,9 +6,16 @@ type HeroProps = {
   image_lg: string
   image_md: string
   image_loading: string
+  credits?: string
 }
 
-const Hero = ({ image_xl, image_lg, image_md, image_loading }: HeroProps) => {
+const Hero = ({
+  image_xl,
+  image_lg,
+  image_md,
+  image_loading,
+  credits,
+}: HeroProps) => {
   const [imgLoaded, setImgLoaded] = useState(false)
   const imageRef = useRef<HTMLImageElement>(null)
   const loaderImageRef = useRef<HTMLImageElement>(null)
@@ -68,8 +75,13 @@ const Hero = ({ image_xl, image_lg, image_md, image_loading }: HeroProps) => {
           }}
         />
       </div>
-      <div className='md:absolute right-xs bottom-xs z-10'>
-        <SocialList />
+      <div className='flex'>
+        <div className='md:absolute left-x bottom-xs z-10 text-black md:text-white opacity-50 w-50%'>
+          <h5 className='m-sm md:y-xs'>© {credits}</h5>
+        </div>
+        <div className='md:absolute right-xs bottom-xs z-10 w-50%'>
+          <SocialList />
+        </div>
       </div>
     </div>
   )

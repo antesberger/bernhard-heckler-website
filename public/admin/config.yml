@@ -71,6 +71,9 @@ collections:
             media_library:
               config:
                 multiple: false
+          - label: "image_credits"
+            name: "image_credits"
+            widget: "string"
           - label: "Into Headline"
             name: "intro_headline"
             widget: "string"
