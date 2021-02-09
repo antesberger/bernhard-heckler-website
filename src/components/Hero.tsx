@@ -35,7 +35,6 @@ const Hero = ({
 
   useEffect(() => {
     const resizeHandler = () => {
-      console.log('resize')
       setHeroHeight(loaderImageRef.current.height)
     }
     window.addEventListener('resize', resizeHandler)
