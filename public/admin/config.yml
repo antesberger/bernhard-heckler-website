@@ -180,15 +180,13 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
-        
+   
   - name: "impressum"
     label: "Impressum"
-    folder: "src/pages/impressum"
-    extension: "mdx"
-    format: "frontmatter"
-    create: true
-    summary: "{{title}}"
-    fields:
+    delete: false
+    editor:
+      preview: false
+    files:
       - label: "Title"
         name: "title"
         widget: "string"
