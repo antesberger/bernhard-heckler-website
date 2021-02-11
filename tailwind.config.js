@@ -16,7 +16,7 @@ const colors = {
   black: '#000000',
   inherit: 'inherit',
   green: '#074C40',
-
+  pink: '#e946e8',
   grey: {
     100: '#a2a2a2',
     200: '#d0d0d0',

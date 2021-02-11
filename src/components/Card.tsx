@@ -9,7 +9,7 @@ const Card = ({ post }: CardProps) => {
   return (
     <a
       href={post.data.url}
-      className='group relative border-2 border-grey-300 border-solid overflow-hidden'
+      className='group relative border-2 border-grey-300 border-solid overflow-hidden bg-white'
       style={{ height: '400px' }}
     >
       {post.data.image && (

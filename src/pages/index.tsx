@@ -19,6 +19,7 @@ import moment from 'moment'
 import { useRef } from 'react'
 import Card from '../components/Card'
 import ReactMarkdown from 'react-markdown'
+import Link from 'next/link'
 
 type IndexProps = {
   featuredBookPost: BookPostContent
@@ -54,15 +55,17 @@ const Index: React.FC<IndexProps> = ({
           <h1>{home.intro_headline}</h1>
           <ReactMarkdown>{home.intro_text}</ReactMarkdown>
         </section>
+      </div>
 
-        <section>
+      <section className='bg-yellow-500 text-black'>
+        <div className='container py-xxxl'>
           <ImageWithText
             title={featuredBookPost.data.title}
             text={featuredBookPost.content}
             image={featuredBookPost.data.image}
           />
-        </section>
-      </div>
+        </div>
+      </section>
 
       <section>
         <HighlightBlock>
@@ -90,6 +93,12 @@ const Index: React.FC<IndexProps> = ({
             <a href='/journalismus'>Mehr</a>
           </div>
         </section>
+      </div>
+
+      <div className='container mt-xxxl mb-xl '>
+        <div className='flex justify-end'>
+          <Link href='/impressum'>Impressum</Link>
+        </div>
       </div>
     </Layout>
   )

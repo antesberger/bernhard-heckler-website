@@ -41,7 +41,7 @@ export default function Navigation({ heroRef }: Props) {
       href: '/tagebuch',
     },
     {
-      text: 'Essays/Reportagen',
+      text: 'Starke Texte',
       href: '/journalismus',
     },
   ]
