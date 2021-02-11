@@ -182,15 +182,12 @@ collections:
         widget: "markdown"
    
   - name: "impressum"
-    label: "Impressum"
-    delete: false
-    editor:
-      preview: false
-    files:
+    label: "impressum"
+    file: "impressum.json"
+        fields:
       - label: "Title"
         name: "title"
         widget: "string"
       - label: "Body"
         name: "body"
         widget: "markdown"
-        
