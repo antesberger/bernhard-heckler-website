@@ -184,7 +184,7 @@ collections:
   - name: "impressum"
     label: "impressum"
     file: "impressum.json"
-        fields:
+    fields:
       - label: "Title"
         name: "title"
         widget: "string"
