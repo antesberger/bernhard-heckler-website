@@ -1,7 +1,8 @@
 {
-  "base_url": "https://bernhardheckler.de",
+  "instagram_account": "https://www.instagram.com/bernihecklestone/",
   "site_title": "Bernhard Heckler",
-  "site_description": "Personal Website",
+  "twitter_account": "https://twitter.com/bernhardheckler",
+  "base_url": "https://bernhardheckler.de",
   "site_keywords": [
     {
       "keyword": "Schriftsteller"
@@ -20,7 +21,8 @@
     "Klett-Cotta",
     "Tropen"
   ],
-  "posts_per_page": 20,
-  "twitter_account": "https://twitter.com/bernhardheckler",
-  "instagram_account": "https://www.instagram.com/bernihecklestone/"
+  "site_description": "Personal Website",
+  "tagebuch_navigation": "Tagebuch",
+  "Journalismus_navigation\"": "Essays/Reportagen",
+  "posts_per_page": 20
 }
