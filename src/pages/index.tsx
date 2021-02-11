@@ -47,6 +47,7 @@ const Index: React.FC<IndexProps> = ({
           image_md={home.image_md}
           image_loading={home.image_loading}
           credits={home.image_credits}
+          credits_url={home.image_credits_url}
         />
       </div>
 

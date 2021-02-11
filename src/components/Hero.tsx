@@ -7,6 +7,7 @@ type HeroProps = {
   image_md: string
   image_loading: string
   credits?: string
+  credits_url?: string
 }
 
 const Hero = ({
@@ -15,6 +16,7 @@ const Hero = ({
   image_md,
   image_loading,
   credits,
+  credits_url,
 }: HeroProps) => {
   const [imgLoaded, setImgLoaded] = useState(false)
   const imageRef = useRef<HTMLImageElement>(null)
@@ -76,7 +78,16 @@ const Hero = ({
       </div>
       <div className='flex'>
         <div className='md:absolute left-x bottom-xs z-10 text-black md:text-white opacity-50 w-50%'>
-          <h5 className='m-sm md:y-xs'>© {credits}</h5>
+          <h5 className='m-sm md:y-xs'>
+            <a
+              href={credits_url}
+              target='_blank'
+              rel='noreferrer'
+              className='inline-block'
+            >
+              © {credits}
+            </a>
+          </h5>
         </div>
         <div className='md:absolute right-xs bottom-xs z-10 w-50%'>
           <SocialList />

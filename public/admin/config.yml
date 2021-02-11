@@ -47,18 +47,6 @@ collections:
           - label: "Instagram account"
             name: "instagram_account"
             widget: "string"
-            
-      - name: "impressum"
-        label: "impressum"
-        file: "/impressum.json"
-        fields:
-          - label: "Title"
-            name: "title"
-            widget: "string"
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-
 
       - name: "home"
         label: "Home Page"
@@ -107,6 +95,17 @@ collections:
             collection: "books"
             search_fields: ["title"]
             value_field: "title"
+            
+      - name: "impressum"
+        label: "impressum"
+        file: "/impressum.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
 
   - name: "books"
     label: "Bücher"
