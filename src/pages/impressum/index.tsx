@@ -9,7 +9,9 @@ const Impressum: React.FC = () => {
       <div className='container space-y-xxxl my-md md:my-xxxl'>
         <section>
           <h1>{impressum.title}</h1>
-          <ReactMarkdown>{impressum.body}</ReactMarkdown>
+          <div className='postbody'>
+            <ReactMarkdown>{impressum.body}</ReactMarkdown>
+          </div>
         </section>
       </div>
     </Layout>

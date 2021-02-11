@@ -7,6 +7,7 @@ import {
   useRef,
   useCallback,
 } from 'react'
+import config from '../lib/config'
 
 type Props = {
   heroRef?: MutableRefObject<HTMLDivElement>
@@ -37,11 +38,11 @@ export default function Navigation({ heroRef }: Props) {
 
   const links = [
     {
-      text: 'Tagebuch',
+      text: config.tagebuch_navigation,
       href: '/tagebuch',
     },
     {
-      text: 'Starke Texte',
+      text: config.journalismus_navigation,
       href: '/journalismus',
     },
   ]

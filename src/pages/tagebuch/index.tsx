@@ -6,7 +6,6 @@ import TwitterCardMeta from '../../components/meta/TwitterCardMeta'
 import config from '../../lib/config'
 import { listPostContent, countPosts } from '../../lib/tagebuch'
 import { TagebuchPostContent } from '../../lib/utils'
-import Pagination from '../../components/Pagination'
 import moment from 'moment'
 import ReactMarkdown from 'react-markdown'
 
@@ -34,7 +33,9 @@ export default function Index({ posts, pagination }: Props) {
               <h4 className='text-grey-300 -mt-sm mb-sm text-yellow-400'>
                 {moment(post.data.date).format('DD.MM.YYYY')}
               </h4>
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+              <div className='postbody'>
+                <ReactMarkdown>{post.content}</ReactMarkdown>
+              </div>
             </li>
           ))}
         </ul>

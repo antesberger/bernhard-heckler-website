@@ -7,6 +7,7 @@ export interface BookPostData {
   readonly date: string
   readonly title: string
   readonly image: string
+  readonly link: string
 }
 
 export interface BookPostContent extends matter.GrayMatterFile<string> {

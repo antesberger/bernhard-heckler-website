@@ -54,7 +54,9 @@ const Index: React.FC<IndexProps> = ({
       <div className='container space-y-xxxl my-md md:my-xxxl'>
         <section>
           <h1>{home.intro_headline}</h1>
-          <ReactMarkdown>{home.intro_text}</ReactMarkdown>
+          <div className='postbody'>
+            <ReactMarkdown>{home.intro_text}</ReactMarkdown>
+          </div>
         </section>
       </div>
 
@@ -64,6 +66,7 @@ const Index: React.FC<IndexProps> = ({
             title={featuredBookPost.data.title}
             text={featuredBookPost.content}
             image={featuredBookPost.data.image}
+            link={featuredBookPost.data.link}
           />
         </div>
       </section>
@@ -74,7 +77,9 @@ const Index: React.FC<IndexProps> = ({
           <h4 className='text-yellow-500 -mt-sm mb-sm'>
             {moment(featuredTagebuchPost.data.date).format('DD.MM.YYYY')}
           </h4>
-          <ReactMarkdown>{featuredTagebuchPost.content}</ReactMarkdown>
+          <div className='postbody'>
+            <ReactMarkdown>{featuredTagebuchPost.content}</ReactMarkdown>
+          </div>
           <div className='cursor-pointer flex text-yellow-500 justify-end mt-lg'>
             <a href='/tagebuch'>Mehr</a>
           </div>

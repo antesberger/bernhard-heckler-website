@@ -31,7 +31,7 @@ collections:
             name: "tagebuch_navigation"
             widget: "string"
           - label: "Journalismus Navigation"
-            name: Journalismus_navigation"
+            name: "journalismus_navigation"
             widget: "string"
           - label: "Site keywords"
             name: "site_keywords"
@@ -41,6 +41,9 @@ collections:
               label: Keyword
               name: keyword
               widget: "string"
+          - label: "email address"
+            name: "email_address"
+            widget: "string"
           - label: "Twitter account"
             name: "twitter_account"
             widget: "string"
@@ -133,6 +136,9 @@ collections:
         media_library:
           config:
             multiple: false
+      - label: "Link"
+        name: "link"
+        widget: "string"
         
   - name: "jornalismus"
     label: "Journalismus"
