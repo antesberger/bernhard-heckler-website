@@ -47,6 +47,18 @@ collections:
           - label: "Instagram account"
             name: "instagram_account"
             widget: "string"
+            
+      - name: "impressum"
+        label: "impressum"
+        file: "/impressum.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+
 
       - name: "home"
         label: "Home Page"
@@ -177,17 +189,6 @@ collections:
         format: "YYYY-MM-DD"
         dateFormat: "YYYY-MM-DD"
         timeFormat: false
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-   
-  - name: "impressum"
-    label: "impressum"
-    file: "impressum.json"
-    fields:
-      - label: "Title"
-        name: "title"
-        widget: "string"
       - label: "Body"
         name: "body"
         widget: "markdown"
