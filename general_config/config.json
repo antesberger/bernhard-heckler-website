@@ -1,7 +1,6 @@
 {
   "instagram_account": "https://www.instagram.com/bernihecklestone/",
   "site_title": "Bernhard Heckler",
-  "email_address": "bernhard.heckler@posteo.de",
   "twitter_account": "https://twitter.com/bernhardheckler",
   "base_url": "https://bernhardheckler.de",
   "site_keywords": [
@@ -23,7 +22,9 @@
     "Tropen"
   ],
   "site_description": "Personal Website",
-  "tagebuch_navigation": "Tagebuch",
   "journalismus_navigation": "Essays/Reportagen",
+  "tagebuch_navigation": "Tagebuch",
+  "email_address": "bernhard.heckler@posteo.de",
+  "Journalismus_navigation\"": "Essays/Reportagen",
   "posts_per_page": 20
 }
