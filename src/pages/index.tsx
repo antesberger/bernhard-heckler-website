@@ -54,7 +54,7 @@ const Index: React.FC<IndexProps> = ({
       <div className='container space-y-xxxl my-md md:my-xxxl'>
         <section>
           <h1>{home.intro_headline}</h1>
-          <div className='postbody'>
+          <div className='postbody green-links'>
             <ReactMarkdown>{home.intro_text}</ReactMarkdown>
           </div>
         </section>
@@ -90,12 +90,15 @@ const Index: React.FC<IndexProps> = ({
         <section>
           <div className='row'>
             {featuredJournalismusPosts.map((JournalismusPost, index) => (
-              <div className='col-12 sm:col-6 md:col-4 my-md' key={index}>
+              <div
+                className='col-12 sm:col-6 md:col-4 my-md green-links-after'
+                key={index}
+              >
                 <Card post={JournalismusPost} />
               </div>
             ))}
           </div>
-          <div className='cursor-pointer flex text-yellow-500 justify-end mt-lg'>
+          <div className='cursor-pointer flex text-yellow-500 justify-end mt-lg green-links'>
             <a href='/journalismus'>Mehr</a>
           </div>
         </section>

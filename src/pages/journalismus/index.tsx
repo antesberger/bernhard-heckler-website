@@ -27,26 +27,26 @@ export default function Index({ posts, pagination }: Props) {
       <TwitterCardMeta url={url} title={title} />
 
       <div className='bg-yellow-500'>
-        <div className='container'>
+        <div className='container min-h-full-screen'>
           <div className='row'>
             {posts.map((JournalismusPost, index) => (
-              <div className='col-12 sm:col-6 md:col-4 my-md' key={index}>
+              <div
+                className='col-12 sm:col-6 md:col-4 my-md green-links-after'
+                key={index}
+              >
                 <Card post={JournalismusPost} />
               </div>
             ))}
           </div>
-          <div className='cursor-pointer flex text-yellow-500 justify-end mt-lg'>
-            <a href='/journalismus'>Mehr</a>
-          </div>
 
-          <Pagination
+          {/* <Pagination
             current={pagination.current}
             pages={pagination.pages}
             link={{
               href: (page) => (page === 1 ? '/posts' : '/posts/page/[page]'),
               as: (page) => (page === 1 ? null : '/posts/page/' + page),
             }}
-          />
+          /> */}
         </div>
       </div>
     </Layout>

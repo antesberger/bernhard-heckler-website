@@ -76,3 +76,15 @@ a h6 {
   @apply text-yellow-500;
   display: inline-flex;
 }
+
+.green-links a {
+  @apply text-green;
+}
+
+.green-links a::after {
+  @apply bg-green;
+}
+
+.green-links-after a::after {
+  @apply bg-green;
+}

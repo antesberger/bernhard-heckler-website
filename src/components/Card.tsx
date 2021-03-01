@@ -9,7 +9,7 @@ const Card = ({ post }: CardProps) => {
   return (
     <a
       href={post.data.url}
-      className='group relative border-2 border-grey-300 border-solid overflow-hidden bg-white'
+      className='group relative border-2 border-grey-300 border-solid overflow-hidden bg-white text-black'
       style={{ height: '400px' }}
     >
       {post.data.image && (
@@ -25,7 +25,7 @@ const Card = ({ post }: CardProps) => {
             <p className='font-bold'>{post.data.publisher}</p>
           </div>
           <div className='col-6'>
-            <p className='font-bold text-yellow-500 flex justify-end'>
+            <p className='font-bold text-green flex justify-end'>
               {moment(post.data.date).format('DD.MM.YY')}
             </p>
           </div>
@@ -38,7 +38,7 @@ const Card = ({ post }: CardProps) => {
         >
           {post.content}
         </p>
-        <p className='absolute right-0 bottom-0 bg-yellow-500 px-xs my-xs mb-0 font-bold text-white'>
+        <p className='absolute right-0 bottom-0 bg-green px-xs my-xs mb-0 font-bold text-white'>
           {post.data.type}
         </p>
       </div>
