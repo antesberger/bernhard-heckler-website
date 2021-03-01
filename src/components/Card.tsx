@@ -10,7 +10,7 @@ const Card = ({ post }: CardProps) => {
     <a
       href={post.data.url}
       className='group relative border-2 border-grey-300 border-solid overflow-hidden bg-white text-black'
-      style={{ height: '400px' }}
+      style={{ height: '430px' }}
     >
       {post.data.image && (
         <img
@@ -30,7 +30,7 @@ const Card = ({ post }: CardProps) => {
             </p>
           </div>
         </div>
-        <h3 className='font-bold mb-xs mt-sm'>{post.data.title}</h3>
+        <h3 className='font-bold mb-xs'>{post.data.title}</h3>
         <p
           className={`mt-sm ${
             post.data.image ? 'truncate-3-lines' : 'truncate-8-lines'

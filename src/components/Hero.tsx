@@ -85,7 +85,7 @@ const Hero = ({
               rel='noreferrer'
               className='inline-block text-sm'
             >
-              © {credits}
+              © Fotografie: {credits}
             </a>
           </p>
         </div>

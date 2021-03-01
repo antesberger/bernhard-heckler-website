@@ -88,3 +88,7 @@ a h6 {
 .green-links-after a::after {
   @apply bg-green;
 }
+
+.postbody p {
+  @apply my-sm;
+}
