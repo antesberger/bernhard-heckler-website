@@ -13,13 +13,13 @@
     {
       "keyword": "Journalist"
     },
-    "Bernhard Heckler",
-    "Das Liebesleben der Pinguine",
-    "SZ Magazin",
-    "Süddeutsche Zeitung",
-    "Die Zeit",
-    "Klett-Cotta",
-    "Tropen"
+    { "keyword": "Bernhard Heckler" },
+    { "keyword": "Das Liebesleben der Pinguine" },
+    { "keyword": "SZ Magazin" },
+    { "keyword": "Süddeutsche Zeitung" },
+    { "keyword": "Die Zeit" },
+    { "keyword": "Klett-Cotta" },
+    { "keyword": "Tropen" }
   ],
   "site_description": "Personal Website",
   "journalismus_navigation": "Journalistische Geschichten",

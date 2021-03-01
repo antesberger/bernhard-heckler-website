@@ -18,7 +18,10 @@ export default function BasicMeta({ title, description, url }: Props) {
       />
       <meta
         name='keywords'
-        content={config.site_keywords.map((object) => object.keyword).join(',')}
+        content={config.site_keywords
+          .map((object) => object.keyword)
+          .filter((keyword) => typeof keyword !== 'undefined')
+          .join(', ')}
       />
       <link rel='canonical' href={config.base_url + url} />
     </Head>
