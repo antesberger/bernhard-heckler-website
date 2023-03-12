@@ -10,22 +10,20 @@
     "test": "jest"
   },
   "dependencies": {
-    "@mapbox/rehype-prism": "^0.5.0",
-    "@svgr/webpack": "^5.4.0",
     "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat",
     "@types/js-yaml": "^3.12.5",
     "autoprefixer": "^9",
     "date-fns": "^2.11.1",
+    "eslint-config-next": "^13.2.4",
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.2",
     "js-yaml": "^3.14.0",
     "moment": "^2.29.1",
-    "next": "9.5.1",
-    "next-mdx-enhanced": "^3.1.0",
+    "next": "^13.2.4",
     "normalize.css": "^8.0.1",
     "postcss": "^7",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-instagram-embed": "^1.5.0",
     "react-markdown": "^5.0.3",
     "react-schemaorg": "^1.2.0",
@@ -38,12 +36,13 @@
     "tailwindcss-truncate-multiline": "^1.0.3"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
     "@types/jest": "^26.0.9",
     "@types/node": "^14.14.20",
     "@types/react": "^16.9.32",
     "jest": "^26.3.0",
     "ts-jest": "^26.2.0",
-    "typescript": "^3.8.3",
+    "typescript": "^4.9.5",
     "yaml-loader": "^0.6.0"
   }
 }

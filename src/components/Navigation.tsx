@@ -59,11 +59,11 @@ export default function Navigation({ heroRef }: Props) {
         inverted ? 'text-black bg-white' : 'text-white'
       } ${active && windowWidth < 768 && 'bg-white text-black'}`}
     >
-      <div className='flex justify-between items-center w-full'>
+      <div className='flex items-center justify-between w-full'>
         <Link href='/'>
-          <a>
-            <h1 className='font-bold text-xl mb-0'>Bernhard Heckler</h1>
-          </a>
+          <span>
+            <h1 className='mb-0 text-xl font-bold'>Bernhard Heckler</h1>
+          </span>
         </Link>
         <ul
           style={
@@ -86,7 +86,7 @@ export default function Navigation({ heroRef }: Props) {
           {links.map((link, index) => (
             <li key={index}>
               <Link href={link.href}>
-                <a className='font-semibold text-md base'>{link.text}</a>
+                <span className='font-semibold text-md base'>{link.text}</span>
               </Link>
             </li>
           ))}
